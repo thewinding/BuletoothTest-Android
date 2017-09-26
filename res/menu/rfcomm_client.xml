@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="cn.zhg.test.bluetooth.RfcommClientActivity" >
+
+    <item
+        android:id="@+id/action_connect"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:checkable="true"
+        android:title="@string/action_connect"/>
+ <item
+        android:id="@+id/action_reconnect"
+        android:orderInCategory="100"
+        android:showAsAction="never" 
+        android:title="@string/action_reconnect"/>
+</menu>
