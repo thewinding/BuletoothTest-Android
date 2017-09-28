@@ -95,6 +95,17 @@ public class RfcommServerActivity extends BaseActivity implements Constants, OnC
 		clients=new HashSet<>();
 	}
 	@Override
+	public void onBackPressed()
+	{
+		if(this.isShowListView())
+		{
+			this.hideListView();
+		}else
+		{
+			super.onBackPressed();
+		} 
+	}
+	@Override
 	public boolean onCreateOptionsMenu(Menu menu)
 	{
 		getMenuInflater().inflate(R.menu.rfcomm_server, menu); 
@@ -103,7 +114,7 @@ public class RfcommServerActivity extends BaseActivity implements Constants, OnC
 	public boolean onPrepareOptionsMenu(Menu menu)
 	{ 
 		menu.findItem(R.id.action_start).setChecked(isConnect());
-		menu.findItem(R.id.action_devices).setChecked(isShow());
+		menu.findItem(R.id.action_devices).setChecked(isShowListView());
 		return super.onPrepareOptionsMenu(menu);
 	}
 
@@ -124,10 +135,10 @@ public class RfcommServerActivity extends BaseActivity implements Constants, OnC
 		case R.id.action_devices: 
 			if (item.isChecked())
 			{
-				this.hideDevices();
+				this.hideListView();
 			} else
 			{
-				this.showDevices(); 
+				this.showListView(); 
 			}
 			return true;
 		}
@@ -136,7 +147,7 @@ public class RfcommServerActivity extends BaseActivity implements Constants, OnC
 	/**
 	 * 隐藏客户端列表
 	 */
-	private void hideDevices()
+	private void hideListView()
 	{
 		scrollV.setBackgroundColor(Color.WHITE);
 		ValueAnimator animation = ObjectAnimator.ofFloat(listV, "X",0,  - (displaySize.x * 0.7f)); 
@@ -145,7 +156,7 @@ public class RfcommServerActivity extends BaseActivity implements Constants, OnC
 	/**
 	 *显示客户端列表
 	 */
-	private void showDevices()
+	private void showListView()
 	{ 
 		scrollV.setBackgroundResource(R.color.colorPrimaryDark);
 		ValueAnimator animation = ObjectAnimator.ofFloat(listV, "X",  - (displaySize.x * 0.7f),0); 
@@ -155,7 +166,7 @@ public class RfcommServerActivity extends BaseActivity implements Constants, OnC
 	 * 是否在显示列表
 	 * @return
 	 */
-	private boolean isShow()
+	private boolean isShowListView()
 	{ 
 		return listV.getX()==0;
 	}

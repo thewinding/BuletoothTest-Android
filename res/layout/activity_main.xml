@@ -2,19 +2,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-     tools:context=".MainActivity"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
 
     <Button
-        android:onClick="openRfcommServer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="openRfcommServer"
         android:text="@string/title_activity_rfcomm_server" />
 
     <Button
-         android:onClick="openRfcommClient"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="openRfcommClient"
         android:text="@string/title_activity_rfcomm_client" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="openGattServer"
+        android:text="@string/title_activity_gatt_server" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="openGattClient"
+        android:text="@string/title_activity_gatt_client" />
 
 </LinearLayout>

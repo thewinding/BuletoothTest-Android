@@ -22,4 +22,12 @@ public class MainActivity extends Activity
 	{
 		this.startActivity(new Intent(this,RfcommClientActivity.class));
 	}
+	public void openGattServer(View view)
+	{
+		this.startActivity(new Intent(this,GattServerActivity.class));
+	}
+	public void openGattClient(View view)
+	{
+		this.startActivity(new Intent(this,GattClientActivity.class));
+	}
 }

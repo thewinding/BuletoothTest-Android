@@ -1,47 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="cn.zhg.test.bluetooth"
-    android:versionCode="1"
-    android:versionName="1.0" >
+	package="cn.zhg.test.bluetooth" android:versionCode="1"
+	android:versionName="1.0">
 
-    <uses-sdk
-        android:minSdkVersion="21"
-        android:targetSdkVersion="23" />
+	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="22" />
 
-    <uses-feature android:name="android.hardware.bluetooth_le" />
+	<uses-feature android:name="android.hardware.bluetooth_le" />
+	<uses-permission android:name="android.permission.BLUETOOTH" />
+	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<application android:allowBackup="true" android:label="@string/app_name"
+		android:theme="@style/AppTheme">
+		<activity android:name=".RfcommServerActivity"
+			android:configChanges="keyboardHidden|orientation|screenSize"
+			android:label="@string/title_activity_rfcomm_server" />
+		<activity android:name=".DevicesListActivity"
+			android:configChanges="keyboardHidden|orientation|screenSize"
+			android:label="@string/title_activity_devices_list" />
+		<activity android:name=".LeDevicesListActivity"
+			android:configChanges="keyboardHidden|orientation|screenSize"
+			android:label="@string/title_activity_devices_list" />
+		<activity android:name=".DeviceUuidsListActivity"
+			android:configChanges="keyboardHidden|orientation|screenSize"
+			android:label="@string/title_activity_device_uuids_list" />
+		<activity android:name=".RfcommClientActivity"
+			android:configChanges="keyboardHidden|orientation|screenSize"
+			android:label="@string/title_activity_rfcomm_client" />
+		<activity android:name=".GattClientActivity"
+			android:configChanges="keyboardHidden|orientation|screenSize"
+			android:label="@string/title_activity_gatt_client" />
+		<activity android:name=".GattServerActivity"
+			android:configChanges="keyboardHidden|orientation|screenSize"
+			android:label="@string/title_activity_gatt_server" />
+		<activity android:name=".MainActivity" android:label="@string/app_name">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
 
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-
-    <application
-        android:allowBackup="true"
-        android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
-        <activity
-            android:name=".RfcommServerActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:label="@string/title_activity_rfcomm_server" />
-        <activity
-            android:name=".DevicesListActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:label="@string/title_activity_devices_list" />
-        <activity
-            android:name=".DeviceUuidsListActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:label="@string/title_activity_device_uuids_list" />
-        <activity
-            android:name=".RfcommClientActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:label="@string/title_activity_rfcomm_client" />
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-    </application>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+	</application>
 
 </manifest>

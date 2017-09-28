@@ -4,6 +4,8 @@
     <string name="app_name">蓝牙测试</string>
     <string name="title_activity_rfcomm_client">Rfcomm客户端</string>
     <string name="title_activity_rfcomm_server">Rfcomm服务端</string>
+    <string name="title_activity_gatt_client">低功耗客户端</string>
+    <string name="title_activity_gatt_server">低功耗服务端</string>
     <string name="title_activity_devices_list">蓝牙设备列表</string>
     <string name="title_activity_device_uuids_list">UUID列表</string>
     <string name="hello_world">Hello world!</string>
@@ -11,5 +13,8 @@
     <string name="action_reconnect">重新连接</string>
     <string name="action_start">开启服务</string>
     <string name="action_devices">客户端列表</string>
-    <string name="action_send">发送</string>  
+    <string name="action_services">服务列表</string>
+    <string name="action_send">发送</string>
+    <string name="action_read">读取</string>
+
 </resources>
